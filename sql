@@ -40,3 +40,15 @@ mysql> select firstname , lastname
 2 rows in set (0.00 sec)
 
 mysql> 
+mysql> select firstname , lastname, birthday
+    -> from wizard
+    -> where birthday = (select min(birthday) from wizard);
++-----------+------------+------------+
+| firstname | lastname   | birthday   |
++-----------+------------+------------+
+| albus     | dumbledore | 1881-07-01 |
++-----------+------------+------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
